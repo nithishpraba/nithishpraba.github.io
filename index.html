@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nithish Hullathy Prabagaran | Data Engineer &amp; Analyst</title>
+<meta name="description" content="Portfolio of Nithish Hullathy Prabagaran, a data engineer and analyst in Hamilton, Ontario working with Python, SQL, Snowflake and Power BI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F2F5F7; --card:#FFFFFF; --ink:#13222E; --muted:#51616E; --line:#D5DDE3;
+  --teal:#0B7A85; --teal-dark:#075A63; --amber:#E39A2B; --night:#0F1D27;
+  --display:'Bricolage Grotesque','Segoe UI',system-ui,sans-serif;
+  --body:'IBM Plex Sans','Segoe UI',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--teal-dark)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1080px,92%);margin-inline:auto}
+section{padding:88px 0}
+h1,h2,h3{font-family:var(--display);line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:12px}
+.lead{color:var(--muted);max-width:60ch;margin-bottom:40px}
+
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(242,245,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-weight:800;font-size:1.25rem;color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:28px;list-style:none}
+nav ul a{color:var(--ink);text-decoration:none;font-weight:500;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+nav ul a:hover{border-color:var(--teal)}
+
+/* hero */
+.hero{padding:72px 0 96px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,6.2vw,4.6rem);font-weight:800;margin-bottom:20px}
+.hero .role{font-family:var(--display);font-size:1.3rem;font-weight:500;color:var(--teal-dark);margin-bottom:18px}
+.hero p{color:var(--muted);max-width:52ch;margin-bottom:28px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:8px;font-weight:600;text-decoration:none;font-size:.98rem;transition:background .2s,color .2s}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.primary:hover{background:var(--teal-dark)}
+.btn.ghost{border:2px solid var(--ink);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+
+.flow{background:var(--night);color:#E7EEF2;border-radius:14px;padding:22px;font-family:var(--mono);font-size:.84rem;line-height:1.7;box-shadow:0 18px 40px -22px rgba(15,29,39,.6)}
+.flow .tag{font-family:var(--body);font-size:.78rem;color:#9FB2BF;margin-bottom:10px;display:block}
+.flow .ask{background:#1A2E3C;border-radius:8px;padding:12px 14px;margin-bottom:14px;font-family:var(--body);font-size:.95rem}
+.flow .sql{background:#0A141B;border-radius:8px;padding:12px 14px;margin-bottom:14px;color:#9BE0E6;overflow-x:auto;white-space:pre}
+.flow .sql b{color:var(--amber);font-weight:500}
+.flow .out{display:flex;gap:10px;flex-wrap:wrap}
+.flow .out span{background:#1A2E3C;border-radius:6px;padding:4px 10px;color:#C9D6DE}
+.cursor{display:inline-block;width:8px;height:1em;background:var(--amber);vertical-align:-2px;animation:blink 1.1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* about */
+.about{background:var(--card);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start}
+.photo{aspect-ratio:4/5;border-radius:14px;background:var(--teal);color:#fff;display:grid;place-items:center;font-family:var(--display);font-size:5rem;font-weight:800;overflow:hidden;position:relative}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.about p{margin-bottom:16px;max-width:62ch}
+.social{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.social a{border:1px solid var(--line);border-radius:999px;padding:7px 16px;font-size:.92rem;font-weight:500;text-decoration:none;color:var(--ink);background:var(--paper)}
+.social a:hover{border-color:var(--teal);color:var(--teal-dark)}
+.hidden{display:none!important}
+
+/* skills */
+.skill-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.group{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:24px}
+.group h3{font-size:1.15rem;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.chips li{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:4px 11px;font-size:.9rem}
+
+/* services */
+.services{background:var(--night);color:#E7EEF2}
+.services .lead{color:#9FB2BF}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.svc article{border:1px solid #274052;border-radius:12px;padding:24px}
+.svc h3{font-size:1.2rem;margin-bottom:8px;color:#fff}
+.svc p{color:#B5C5D0;font-size:.97rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;margin-top:48px;border-top:1px solid #274052;padding-top:36px}
+.stats strong{display:block;font-family:var(--display);font-size:2.6rem;color:var(--amber);line-height:1}
+.stats span{color:#B5C5D0;font-size:.95rem}
+
+/* interests */
+.interest-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.interest{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px;border-top:4px solid var(--teal)}
+.interest:nth-child(even){border-top-color:var(--amber)}
+.interest h3{font-size:1.1rem;margin-bottom:8px}
+.interest p{color:var(--muted);font-size:.95rem}
+.ready{margin-top:56px;background:var(--teal);color:#fff;border-radius:14px;padding:40px;display:flex;gap:28px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.ready h3{font-size:1.7rem;margin-bottom:8px}
+.ready p{max-width:55ch;opacity:.92}
+.ready .btn{background:#fff;color:var(--teal-dark)}
+.ready .btn:hover{background:var(--amber);color:var(--ink)}
+
+/* timeline */
+.timeline{position:relative;list-style:none;padding-left:34px;max-width:760px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;margin-bottom:34px}
+.timeline li::before{content:"";position:absolute;left:-34px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--paper);border:4px solid var(--teal)}
+.timeline li.edu::before{border-color:var(--amber)}
+.timeline time{font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.timeline h3{font-size:1.3rem;margin:4px 0 2px}
+.timeline .where{font-weight:500;color:var(--teal-dark);margin-bottom:6px}
+.timeline p{color:var(--muted);max-width:60ch}
+
+/* contact */
+.contact{background:var(--card);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+form{display:grid;gap:14px}
+label{font-weight:500;font-size:.92rem}
+input,textarea{width:100%;padding:12px 14px;border:1px solid #B5C2CC;border-radius:8px;font:inherit;background:var(--paper);margin-top:4px}
+textarea{min-height:130px;resize:vertical}
+button.btn{border:0;cursor:pointer;font-family:inherit;justify-self:start}
+.details dt{font-family:var(--display);font-weight:700;margin-top:18px}
+.details dt:first-child{margin-top:0}
+.details dd{color:var(--muted)}
+footer{padding:32px 0;border-top:1px solid var(--line);font-size:.93rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .about-grid .photo{max-width:240px}
+  nav ul{gap:16px}
+  section{padding:64px 0}
+}
+@media (max-width:520px){ nav ul li:nth-child(2){display:none} }
+@media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} .cursor{animation:none} }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap" aria-label="Main">
+    <a class="brand" href="#home">Nithish</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="role">Data Engineer &amp; Analyst</p>
+      <h1>Hi, I'm Nithish.</h1>
+      <p>I build data pipelines, dashboards and natural-language-to-SQL tools that help teams get answers from their data. Based in Hamilton, Ontario and open to data roles across the Greater Toronto Area.</p>
+      <div class="btns">
+        <a class="btn primary" href="#contact">Contact me</a>
+        <a class="btn ghost" href="#timeline">See my timeline</a>
+      </div>
+    </div>
+    <div class="flow" role="img" aria-label="Example of a plain-English question turned into a SQL query">
+      <span class="tag">Example: ask in English</span>
+      <div class="ask">Which product lines had the most claims last quarter?</div>
+      <span class="tag">The chatbot writes the SQL</span>
+      <div class="sql"><b>SELECT</b> product_line, <b>COUNT</b>(*) <b>AS</b> claims
+<b>FROM</b> claims
+<b>WHERE</b> filed_date &gt;= '2026-01-01'
+<b>GROUP BY</b> product_line
+<b>ORDER BY</b> claims <b>DESC</b>;<span class="cursor"></span></div>
+      <div class="out"><span>Python</span><span>SQL</span><span>Snowflake</span><span>RAG</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="photo" aria-hidden="true">NP<img src="images/me.jpg" alt="" onerror="this.remove()"></div>
+    <div>
+      <h2>About me</h2>
+      <p>I like turning messy data into something people can trust and use. As a Data Engineer at Northbridge Insurance I built a RAG chatbot that converts plain-English questions into SQL, so non-technical teammates could query data on their own.</p>
+      <p>Before that I worked as a Data Analyst in Bengaluru, then completed postgraduate programs in data science, predictive analytics, and business intelligence. Outside work I run a weekly machine learning project that predicts Formula 1 race winners.</p>
+      <p>Want to talk about a role, a project, or an idea? Email me at <a id="aboutEmail" href="#contact">my inbox</a>.</p>
+      <div class="social" id="social">
+        <a id="lnkLinkedin" class="hidden" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="lnkGithub" class="hidden" href="#" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <h2>My skills</h2>
+    <p class="lead">The tools I use day to day to move, model, and present data.</p>
+    <div class="skill-groups">
+      <div class="group"><h3>Languages</h3><ul class="chips"><li>Python</li><li>SQL</li></ul></div>
+      <div class="group"><h3>Data platforms</h3><ul class="chips"><li>Snowflake</li><li>ETL</li><li>Data pipelines</li></ul></div>
+      <div class="group"><h3>Visualization</h3><ul class="chips"><li>Power BI</li><li>Tableau</li></ul></div>
+      <div class="group"><h3>Applied AI &amp; ML</h3><ul class="chips"><li>RAG chatbots</li><li>Natural language to SQL</li><li>Predictive modelling</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>What I can do for you</h2>
+    <p class="lead">Ways I can help a team or a project.</p>
+    <div class="svc">
+      <article><h3>Data pipelines</h3><p>Design and build ETL pipelines that load clean, reliable data into Snowflake.</p></article>
+      <article><h3>Dashboards and reporting</h3><p>Turn raw tables into Power BI and Tableau dashboards that answer real questions.</p></article>
+      <article><h3>Natural language to SQL</h3><p>Build RAG chatbots that let anyone ask questions of a database in plain English.</p></article>
+      <article><h3>Predictive models</h3><p>Prepare data, train and evaluate models, and share what they find.</p></article>
+    </div>
+    <div class="stats">
+      <div><strong>2</strong><span>Data roles in Canada and India</span></div>
+      <div><strong>3</strong><span>Postgraduate programs completed</span></div>
+      <div><strong>1</strong><span>RAG chatbot built for insurance data</span></div>
+      <div><strong>Weekly</strong><span>F1 winner predictions</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERESTS -->
+<section id="interests">
+  <div class="wrap">
+    <h2>My technical interests</h2>
+    <p class="lead">Areas I keep learning and building in.</p>
+    <div class="interest-grid">
+      <div class="interest"><h3>Data engineering</h3><p>Pipelines, ETL, and warehouse design on Snowflake.</p></div>
+      <div class="interest"><h3>Business intelligence</h3><p>Dashboards in Power BI and Tableau that people actually use.</p></div>
+      <div class="interest"><h3>LLMs and RAG</h3><p>Grounding language models in company data to answer questions.</p></div>
+      <div class="interest"><h3>Machine learning</h3><p>Predicting outcomes, from insurance data to Formula 1 race winners.</p></div>
+    </div>
+    <div class="ready">
+      <div>
+        <h3>I'm ready for your next project.</h3>
+        <p>I enjoy problems where the data is scattered and the question is clear. If that sounds like your team, let's talk.</p>
+      </div>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" style="background:var(--card);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <h2>Timeline: work &amp; education</h2>
+    <p class="lead">Key milestones, newest first.</p>
+    <ol class="timeline">
+      <li><time>Apr 2025 – Apr 2026</time><h3>Data Engineer</h3><div class="where">Northbridge Insurance, Toronto, ON</div><p>Built a RAG chatbot that converts natural language questions into SQL.</p></li>
+      <li class="edu"><time>Sep 2024 – 2025</time><h3>Postgraduate Diploma, Business Intelligence and System Infrastructure</h3><div class="where">Algonquin College</div><p>Graduated 2025.</p></li>
+      <li class="edu"><time>Jan 2024 – Aug 2024</time><h3>Postgraduate Program, Predictive Analytics</h3><div class="where">Conestoga College</div><p>Eight-month program.</p></li>
+      <li><time>Mar 2023 – Nov 2023</time><h3>Data Analyst</h3><div class="where">Anar Capital Pte Ltd, Bengaluru, India</div></li>
+      <li class="edu"><time>2022 – 2023</time><h3>PG Program, Data Science and Engineering</h3><div class="where">Great Lakes</div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Contact me</h2>
+      <p class="lead" style="margin-bottom:24px">Send a message and it opens in your email app, addressed to me.</p>
+      <form id="form">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Your email<input name="email" type="email" required autocomplete="email"></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+    </div>
+    <dl class="details">
+      <dt>Email</dt><dd><a id="contactEmail" href="#"></a></dd>
+      <dt>Location</dt><dd>Hamilton, Ontario, Canada</dd>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr"></span> Nithish Hullathy Prabagaran</span>
+    <a href="#home">Back to top</a>
+  </div>
+</footer>
+
+<script>
+/* ===== EDIT THESE ===== */
+const CONFIG = {
+  email:    "nithishprabagaran23@gmail.com",
+  linkedin: "",   // e.g. "https://www.linkedin.com/in/your-handle"
+  github:   ""    // e.g. "https://github.com/your-username"
+};
+/* ====================== */
+document.getElementById('yr').textContent = new Date().getFullYear();
+['aboutEmail','contactEmail'].forEach(id=>{
+  const a=document.getElementById(id);
+  a.href='mailto:'+CONFIG.email; a.textContent=CONFIG.email;
+});
+[['lnkLinkedin','linkedin'],['lnkGithub','github']].forEach(([id,key])=>{
+  const a=document.getElementById(id);
+  if(CONFIG[key]){ a.href=CONFIG[key]; a.classList.remove('hidden'); }
+});
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const f=new FormData(e.target);
+  const body=`${f.get('message')}\n\nFrom: ${f.get('name')} (${f.get('email')})`;
+  location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent('Portfolio message from '+f.get('name'))}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>
